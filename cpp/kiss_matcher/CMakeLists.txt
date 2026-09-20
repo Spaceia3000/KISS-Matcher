@@ -113,6 +113,13 @@ install(DIRECTORY core/kiss_matcher DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
 
 export(TARGETS ${MYPROJECT_EXPORTED_TARGETS} FILE ${PROJECT_NAME}-exports.cmake)
 
+add_executable(ha_mslam_kiss_cli ha_mslam_kiss_cli.cpp)
+target_link_libraries(ha_mslam_kiss_cli PRIVATE ${TARGET_NAME})
+
+install(TARGETS ha_mslam_kiss_cli
+    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+)
+
 install(FILES
     cmake/${PROJECT_NAME}Config.cmake
     cmake/Findflann.cmake
