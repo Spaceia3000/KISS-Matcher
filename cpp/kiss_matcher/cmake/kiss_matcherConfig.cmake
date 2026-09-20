@@ -4,6 +4,8 @@ include(CMakeFindDependencyMacro)
 
 find_dependency(Eigen3 3.3 REQUIRED)
 find_dependency(OpenMP REQUIRED)
+find_dependency(TBB REQUIRED)
+find_dependency(robin REQUIRED)
 # Use Findflann.cmake (installed alongside this file) which tries CONFIG mode
 # first and falls back to manual discovery on distros without a flann CMake
 # config (e.g. Ubuntu 22.04 libflann-dev).
